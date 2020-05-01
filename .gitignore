@@ -1,0 +1,20 @@
+.idea/
+.idea/*
+*.iml
+lib_managed/
+target/
+.idea_modules/
+*.test
+*.jks
+*.pem
+credentials.txt
+logs
+dist
+.hydra
+hydra.sbt
+.bloop
+
+# Project exclude paths
+/out/
+/out/IntelliJ-BSP-vanilla-classes/
+/out/IntelliJ-BSP-vanilla-test-test-classes/
