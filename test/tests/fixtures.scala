@@ -15,7 +15,7 @@ object TestAppLoader {
 }
 
 trait PlayAppFixture { self: FunSuite =>
-  val app = new FunFixture[AppComponents](
+  val app = FunFixture[AppComponents](
     opts => {
       val comps = new AppComponents(TestAppLoader.createTestAppContext)
       Play.start(comps.application)
@@ -28,7 +28,7 @@ trait PlayAppFixture { self: FunSuite =>
 }
 
 trait PlayServerFixture { self: FunSuite =>
-  val server = new FunFixture[RunningServer](
+  val server = FunFixture[RunningServer](
     opts => {
       val comps = new AppComponents(TestAppLoader.createTestAppContext)
       DefaultTestServerFactory.start(comps.application)

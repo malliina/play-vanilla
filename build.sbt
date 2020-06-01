@@ -8,12 +8,12 @@ val vanilla = project
   .settings(
     organization := "com.malliina",
     version := "0.0.1",
-    scalaVersion := "2.13.1",
+    scalaVersion := "2.13.2",
     scalacOptions := Seq("-unchecked", "-deprecation"),
     pipelineStages := Seq(digest, gzip),
     libraryDependencies ++= Seq(
-      "com.malliina" %% "okclient" % "1.14.0" % Test,
-      "org.scalameta" %% "munit" % "0.7.1" % Test
+      "com.malliina" %% "okclient" % "1.17.0" % Test,
+      "org.scalameta" %% "munit" % "0.7.7" % Test
     ),
     testFrameworks += new TestFramework("munit.Framework")
   )

@@ -6,9 +6,7 @@ import play.api.test.FakeRequest
 import play.api.test.Helpers._
 
 class AppTestsScalaTest extends FunSuite with PlayAppFixture with PlayServerFixture {
-  app.test("can read component") { comps =>
-    assert(comps.secretService.secret == 42)
-  }
+  app.test("can read component") { comps => assert(comps.demoValue == 42) }
 
   app.test("can make app request") { comps =>
     val req = FakeRequest("GET", "/")
