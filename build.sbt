@@ -7,7 +7,7 @@ val vanilla = project
   .enablePlugins(PlayScala)
   .settings(
     organization := "com.malliina",
-    version := "0.0.1",
+    version := "0.0.2",
     scalaVersion := "2.13.2",
     scalacOptions := Seq("-unchecked", "-deprecation"),
     pipelineStages := Seq(digest, gzip),
@@ -19,7 +19,9 @@ val vanilla = project
     sources in (Compile, doc) := Seq.empty,
     dockerBaseImage := "openjdk:11",
     dockerExposedPorts ++= Seq(9000),
-    daemonUser in Docker := "vanilla"
+    daemonUser in Docker := "vanilla",
+    version in Docker := gitHash,
+    dockerRepository := Option("vanilla.azurecr.io")
   )
 
 def gitHash: String =

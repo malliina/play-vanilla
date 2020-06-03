@@ -2,9 +2,8 @@ package com.malliina.app
 
 import controllers.{AssetsComponents, Home}
 import play.api.ApplicationLoader.Context
-import play.api.{Application, ApplicationLoader, BuiltInComponentsFromContext}
 import play.api.routing.Router
-import play.filters.HttpFiltersComponents
+import play.api.{Application, ApplicationLoader, BuiltInComponentsFromContext, NoHttpFiltersComponents}
 import router.Routes
 
 class AppLoader extends ApplicationLoader {
@@ -13,7 +12,7 @@ class AppLoader extends ApplicationLoader {
 
 class AppComponents(context: Context)
     extends BuiltInComponentsFromContext(context)
-    with HttpFiltersComponents
+    with NoHttpFiltersComponents
     with AssetsComponents {
   val demoValue = 42
   val home = new Home(controllerComponents, assets)
