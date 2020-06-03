@@ -4,7 +4,7 @@ import scala.util.Try
 
 val vanilla = project
   .in(file("."))
-  .enablePlugins(PlayScala)
+  .enablePlugins(PlayScala, JavaServerAppPackaging, SystemdPlugin)
   .settings(
     organization := "com.malliina",
     version := "0.0.1",
@@ -15,7 +15,9 @@ val vanilla = project
       "com.malliina" %% "okclient" % "1.17.0" % Test,
       "org.scalameta" %% "munit" % "0.7.7" % Test
     ),
-    testFrameworks += new TestFramework("munit.Framework")
+    testFrameworks += new TestFramework("munit.Framework"),
+    maintainer := "Firstname Lastname <email@address.com>",
+    sources in (Compile, doc) := Seq.empty
   )
 
 def gitHash: String =
