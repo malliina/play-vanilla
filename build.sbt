@@ -13,9 +13,13 @@ val vanilla = project
     pipelineStages := Seq(digest, gzip),
     libraryDependencies ++= Seq(
       "com.malliina" %% "okclient" % "1.17.0" % Test,
-      "org.scalameta" %% "munit" % "0.7.7" % Test
+      "org.scalameta" %% "munit" % "0.7.8" % Test
     ),
-    testFrameworks += new TestFramework("munit.Framework")
+    testFrameworks += new TestFramework("munit.Framework"),
+    sources in (Compile, doc) := Seq.empty,
+    dockerBaseImage := "openjdk:11",
+    dockerExposedPorts ++= Seq(9000),
+    daemonUser in Docker := "vanilla"
   )
 
 def gitHash: String =
