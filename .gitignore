@@ -13,6 +13,7 @@ dist
 .hydra
 hydra.sbt
 .bloop
+.bsp
 
 # Project exclude paths
 /out/
