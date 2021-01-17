@@ -2,7 +2,6 @@ scalaVersion := "2.12.12"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
-// for vanilla
 Seq(
   "com.typesafe.play" % "sbt-plugin" % "2.8.7",
   "com.typesafe.sbt" % "sbt-digest" % "1.1.4",
